@@ -9,7 +9,7 @@ This repository contains code and associated files for for the deploying ML mode
     * [Example Notebook](https://github.com/udacity/sagemaker-deployment/ "Example Notebook") Learn how to ....
 ### Programming Labs
 * Sentiment Analysis using AWS SageMaker
-    * [XGBoost in SageMaker](https://github.com/udacity/sagemaker-deployment/Sentiment%20Analysis/IMDB%20Sentiment%20Analysis%20Using%20XGBoost%20in%20SageMaker.ipynb) Build a Sentiment Analysis model using the built in XGBoost algorithm in AWS SageMaker.
+    * [XGBoost in SageMaker](https://github.com/udacity/sagemaker-deployment/tree/master/Sentiment%20Analysis/IMDB%20Sentiment%20Analysis%20Using%20XGBoost%20in%20SageMaker.ipynb) Build a Sentiment Analysis model using the built in XGBoost algorithm in AWS SageMaker.
 
 ### Project
 
