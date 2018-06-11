@@ -102,3 +102,7 @@ ENV/
 
 # mac osx
 .DS_Store
+
+# Notebook files
+Sentiment Analysis/aclImdb_v1.tar.gz
+Sentiment Analysis/aclImdb/
