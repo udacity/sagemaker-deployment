@@ -1,0 +1,41 @@
+FROM ubuntu:16.04
+
+
+# Install Utilities
+RUN apt-get update && apt-get install -y \
+    wget \
+    curl \
+    nginx \
+    ca-certificates \
+    sudo \
+    git \
+    bzip2 \
+    libx11-6 \
+ && rm -rf /var/lib/apt/lists/*
+
+# Install Miniconda
+RUN curl -so ~/miniconda.sh https://repo.continuum.io/miniconda/Miniconda3-4.4.10-Linux-x86_64.sh \
+ && chmod +x ~/miniconda.sh \
+ && ~/miniconda.sh -b -p /opt/conda \
+ && rm ~/miniconda.sh
+ENV PATH=/opt/conda/bin:$PATH
+
+# Ensure conda version is at least 4.4.11
+ENV CONDA_AUTO_UPDATE_CONDA=false
+RUN conda install -y "conda>=4.4.11" && conda clean -ya
+
+# Install pytorch
+RUN conda install -y -c pytorch \
+    pytorch-cpu \
+ && conda clean -ya
+
+# Install additional packages
+# RUN conda install -y -c numpy scipy scikit-learn pandas flask gevent gunicorn
+RUN conda install -y numpy pandas flask gevent gunicorn && conda clean -ya
+
+ENV PYTHONUNBUFFERED=TRUE
+ENV PYTHONDONTWRITEBYTECODE=TRUE
+ENV PATH="/opt/program:${PATH}"
+
+COPY sentiment /opt/program
+WORKDIR /opt/program
