@@ -10,6 +10,7 @@ This repository contains code and associated files for for the deploying ML mode
 ### Programming Labs
 * Sentiment Analysis using AWS SageMaker
     * [XGBoost in SageMaker](https://github.com/udacity/sagemaker-deployment/tree/master/Sentiment%20Analysis/IMDB%20Sentiment%20Analysis%20Using%20XGBoost%20in%20SageMaker.ipynb) Build a Sentiment Analysis model using the built in XGBoost algorithm in AWS SageMaker.
+    * [RNN using PyTorch in SageMaker](https://github.com/udacity/sagemaker-deployment/blob/master/Sentiment%20Analysis/IMDB%20Sentiment%20Analysis%20Using%20RNN%20(PyTorch)%20in%20SageMaker.ipynb) Build a Sentiment Analysis model using a custom PyTorch model in AWS SageMaker.
 
 ### Project
 
