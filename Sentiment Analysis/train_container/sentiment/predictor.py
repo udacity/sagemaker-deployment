@@ -1,5 +1,5 @@
-# This is the file that implements a flask server to do inferences. It's the file that you will modify to
-# implement the scoring for your own algorithm.
+# This is the file that implements a flask server to do inferences. It's the file that you will
+# modify to implement the scoring for your own algorithm.
 
 from __future__ import print_function
 
@@ -20,11 +20,14 @@ from torch.utils.data import Dataset, DataLoader
 
 import model
 
+# This specifies where SageMaker places the model artifacts that were created during training.
 prefix = '/opt/ml/'
 model_path = os.path.join(prefix, 'model')
 
+# Check to see if we are on a gpu enabled device or not.
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
+# Try and load the model artifacts that were created during training.
 try:
     custom_model = model.load_model(os.path.join(model_path, 'sentiment-pytorch'))
 except Exception as e:
@@ -32,14 +35,15 @@ except Exception as e:
     custom_model = None
 
 
-# The flask app for serving predictions
+# The flask app for serving predictions. According to the documentation this app must provided
+# two endpoints. The first, /ping, is used to determine the health of the container and the
+# second, /invocations, is used to actually perform the inference.
 app = flask.Flask(__name__)
 
 @app.route('/ping', methods=['GET'])
 def ping():
     """Determine if the container is working and healthy. In this sample container, we declare
     it healthy if we can load the model successfully."""
-    #health = ScoringService.get_model() is not None  # You can insert a health check here
 
     healthy = custom_model is not None
 
@@ -48,9 +52,9 @@ def ping():
 
 @app.route('/invocations', methods=['POST'])
 def transformation():
-    """Do an inference on a single batch of data. In this sample server, we take data as CSV, convert
-    it to a pandas data frame for internal use and then convert the predictions back to CSV (which really
-    just means one prediction per line, since there's a single column.
+    """Do an inference on a single batch of data. In this sample server, we take data as CSV,
+    convert it to a pandas data frame for internal use and then convert the predictions
+    to CSV, which really just means one prediction per line, since there's a single column.
     """
     data = None
 
@@ -60,7 +64,9 @@ def transformation():
         s = StringIO(data)
         data = pd.read_csv(s, header=None, names=None)
     else:
-        return flask.Response(response='This predictor only supports CSV data', status=415, mimetype='text/plain')
+        return flask.Response(response='This predictor only supports CSV data',
+                              status=415,
+                              mimetype='text/plain')
 
     data_dl = model.build_test_loader(data)
 
