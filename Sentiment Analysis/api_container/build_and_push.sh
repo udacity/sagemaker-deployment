@@ -3,7 +3,7 @@
 # The name of our algorithm
 algorithm_name="sentiment-pytorch-api"
 
-chmod +x sentiment/train
+# chmod +x sentiment/train
 chmod +x sentiment/serve
 
 account=$(aws sts get-caller-identity --query Account --output text)

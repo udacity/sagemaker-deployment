@@ -1,16 +1,13 @@
-# sagemaker-deployment
+# Machine Learning Deployment using AWS SageMaker
 Code and associated files 
-This repository contains code and associated files for for the deploying ML models within AWS SageMaker. This repository consists of a number of tutorial notebooks for various coding exercises, programming labs, and project files that will be used to supplement the lessons of the Nanodegree.
+This repository contains code and associated files for for deploying ML models using AWS SageMaker. This repository consists of a number of tutorial notebooks for various coding exercises, programming labs, and project files that will be used to supplement the lessons of the Nanodegree.
 
 ## Table Of Contents
 
 ### Tutorial Notebooks
-* Example Notebook
-    * [Example Notebook](https://github.com/udacity/sagemaker-deployment/ "Example Notebook") Learn how to ....
+* [Sentiment Analysis using AWS Sagemaker](https://github.com/udacity/sagemaker-deployment/tree/master/Sentiment%20Analysis) is a sequence of three notebooks leading you through the implementation of a sentiment analysis model using AWS SageMaker. At the end you should be able to train and deploy a custom model and access it from a public website.
+
 ### Programming Labs
-* Sentiment Analysis using AWS SageMaker
-    * [XGBoost in SageMaker](https://github.com/udacity/sagemaker-deployment/tree/master/Sentiment%20Analysis/IMDB%20Sentiment%20Analysis%20Using%20XGBoost%20in%20SageMaker.ipynb) Build a Sentiment Analysis model using the built in XGBoost algorithm in AWS SageMaker.
-    * [RNN using PyTorch in SageMaker](https://github.com/udacity/sagemaker-deployment/blob/master/Sentiment%20Analysis/IMDB%20Sentiment%20Analysis%20Using%20RNN%20(PyTorch)%20in%20SageMaker.ipynb) Build a Sentiment Analysis model using a custom PyTorch model in AWS SageMaker.
 
 ### Project
 
