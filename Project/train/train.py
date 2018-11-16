@@ -54,11 +54,11 @@ def _get_train_data_loader(batch_size, training_dir):
 
     return torch.utils.data.DataLoader(train_ds, batch_size=batch_size)
 
+
 def train(model, train_loader, epochs, optimizer, loss_fn, device):
     """
     This is the training method that is called by the PyTorch training script. The parameters
     passed are as follows:
-
     model        - The PyTorch model that we wish to train.
     train_loader - The PyTorch DataLoader that should be used during training.
     epochs       - The total number of epochs to train for.
@@ -66,10 +66,11 @@ def train(model, train_loader, epochs, optimizer, loss_fn, device):
     loss_fn      - The loss function used for training.
     device       - Where the model and data should be loaded (gpu or cpu).
     """
-	
+    
     # TODO: Paste the train() method developed in the notebook here.
 
     pass
+
 
 if __name__ == '__main__':
     # All of the model parameters and training parameters are sent as arguments when the script
