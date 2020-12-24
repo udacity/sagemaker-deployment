@@ -7,7 +7,7 @@ class LSTMClassifier(nn.Module):
 
     def __init__(self, embedding_dim, hidden_dim, vocab_size):
         """
-        Initialize the model by settingg up the various layers.
+        Initialize the model by setting up the various layers.
         """
         super(LSTMClassifier, self).__init__()
 
